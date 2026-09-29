@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chemistry with Sana Zulfiqar — clear, conceptual and engaging chemistry learning resources.">
+<title>Chemistry with Sana Zulfiqar | Chemistry Education</title>
+<style>
+:root{
+  --navy:#102a43; --blue:#1769aa; --cyan:#16b8c4; --mint:#dff8f5;
+  --white:#fff; --ink:#19324a; --muted:#60758a; --light:#f5f9fc;
+  --shadow:0 12px 35px rgba(16,42,67,.10); --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--light);line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);
+    border-bottom:1px solid #e8eef3}
+.nav-inner{max-width:1150px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy)}
+.logo-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;font-size:20px}
+.nav-links{display:flex;gap:24px;font-weight:600;font-size:14px}
+.nav-links a:hover{color:var(--blue)}
+.hero{background:radial-gradient(circle at 80% 20%,rgba(22,184,196,.22),transparent 32%),
+linear-gradient(135deg,#0d2841,#155b91);color:white}
+.hero-inner{max-width:1150px;margin:auto;padding:90px 22px 85px;display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
+.eyebrow{color:#9df4ef;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:800;margin-bottom:15px}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin-bottom:20px}
+.hero p{font-size:19px;max-width:650px;color:#e3f1f8}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 20px;border-radius:999px;font-weight:800;display:inline-block}
+.btn-primary{background:white;color:var(--navy)}
+.btn-secondary{border:1px solid rgba(255,255,255,.45);color:white}
+.btn:hover{transform:translateY(-2px)}
+.molecule{height:330px;position:relative;display:grid;place-items:center}
+.atom{width:160px;height:160px;border:3px solid #8ef1eb;border-radius:50%;position:relative;box-shadow:0 0 45px rgba(22,184,196,.35)}
+.atom:before,.atom:after{content:"";position:absolute;border:2px solid rgba(255,255,255,.65);border-radius:50%;inset:25px  -15px}
+.atom:after{transform:rotate(60deg)}
+.nucleus{position:absolute;inset:55px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font-weight:900}
+.e{position:absolute;width:14px;height:14px;background:#9df4ef;border-radius:50%;box-shadow:0 0 15px #9df4ef}
+.e1{top:8px;left:74px}.e2{right:-8px;top:75px}.e3{bottom:8px;left:74px}.e4{left:-8px;top:75px}
+section{padding:75px 22px}
+.container{max-width:1150px;margin:auto}
+.section-head{text-align:center;max-width:700px;margin:0 auto 38px}
+.section-head h2{font-size:36px;color:var(--navy);margin-bottom:10px}
+.section-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #e8eef3}
+.icon{font-size:34px;margin-bottom:14px}
+.card h3{margin-bottom:8px;color:var(--navy)}
+.card p{color:var(--muted);font-size:15px}
+.about{background:white}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center}
+.profile-box{background:linear-gradient(145deg,#e4fbf8,#e8f1ff);border-radius:30px;padding:45px;text-align:center}
+.profile-circle{width:150px;height:150px;margin:0 auto 20px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-size:55px;font-weight:900}
+.about h2{font-size:38px;color:var(--navy);margin-bottom:14px}
+.about p{color:var(--muted);margin-bottom:15px}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.tag{background:var(--mint);color:#08777d;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:800}
+.resource{background:#f0f8fb}
+.resource .card{min-height:220px}
+.cta{background:linear-gradient(135deg,#0e3655,#138e9c);color:white;text-align:center}
+.cta h2{font-size:38px;margin-bottom:12px}
+.cta p{max-width:650px;margin:0 auto;color:#d9f4f4}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.contact-item{background:white;border-radius:18px;padding:25px;text-align:center;box-shadow:var(--shadow)}
+.contact-item strong{display:block;color:var(--navy);margin-bottom:5px}
+.contact-item span{color:var(--muted);font-size:14px}
+footer{background:#0b2134;color:#c7d7e2;text-align:center;padding:28px 22px;font-size:14px}
+footer strong{color:white}
+@media(max-width:800px){
+ .hero-inner,.about-grid{grid-template-columns:1fr}
+ .molecule{display:none}
+ .cards,.contact-grid{grid-template-columns:1fr}
+ .nav-links{display:none}
+ h1{font-size:48px}
+ section{padding:55px 18px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#home"><span class="logo-mark">⚗</span> Chemistry with Sana</a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#lessons">Lessons</a><a href="#resources">Resources</a><a href="#approach">Teaching</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Learn • Understand • Apply</div>
+      <h1>Learn Chemistry with Sana Zulfiqar.</h1>
+      <p>Welcome to Chemistry with Sana Zulfiqar — a learning space focused on building strong concepts, understanding chemistry from the basics, and making science engaging for students.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#lessons">Explore Lessons</a>
+        <a class="btn btn-secondary" href="#resources">Free Resources</a>
+      </div>
+    </div>
+    <div class="molecule">
+      <div class="atom">
+        <div class="nucleus">C</div>
+        <span class="e e1"></span><span class="e e2"></span><span class="e e3"></span><span class="e e4"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div class="profile-box">
+      <div class="profile-circle">SZ</div>
+      <h3>Sana Zulfiqar</h3>
+      <p>MPhil Chemistry • Chemistry Educator</p>
+    </div>
+    <div>
+      <h2>Teaching chemistry with understanding</h2>
+      <p>I believe students learn chemistry best when concepts are developed from the basic level rather than through memorization alone.</p>
+      <p>My approach combines simple explanations, real-life examples, questioning, activities and differentiated support so learners can build confidence and think scientifically.</p>
+      <div class="tags">
+        <span class="tag">Concept-Based Learning</span><span class="tag">Matric Chemistry</span>
+        <span class="tag">Interactive Teaching</span><span class="tag">Critical Thinking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lessons">
+  <div class="container">
+    <div class="section-head">
+      <h2>Explore Chemistry</h2>
+      <p>Organized learning areas designed to make difficult chemistry concepts easier to understand.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="icon">🧪</div><h3>Fundamentals</h3><p>Atoms, molecules, bonding, periodic trends, chemical formulas and essential concepts.</p></article>
+      <article class="card"><div class="icon">⚛️</div><h3>Organic Chemistry</h3><p>Functional groups, reaction mechanisms, hydrocarbons and important organic reactions.</p></article>
+      <article class="card"><div class="icon">📈</div><h3>Physical Chemistry</h3><p>Kinetics, equilibrium, thermodynamics, solutions and calculations explained step by step.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="resources" class="resource">
+  <div class="container">
+    <div class="section-head">
+      <h2>Learning Resources</h2>
+      <p>Build a growing collection of practical resources for students and chemistry teachers.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="icon">📚</div><h3>Notes & Explanations</h3><p>Concise, concept-focused notes for revision and classroom learning.</p></article>
+      <article class="card"><div class="icon">🃏</div><h3>Flashcards & Activities</h3><p>Interactive ideas for concepts such as Brønsted–Lowry acids and bases, conjugate pairs and more.</p></article>
+      <article class="card"><div class="icon">📝</div><h3>Worksheets & Quizzes</h3><p>Practice material that helps students check understanding and develop critical thinking.</p></article>
+    </div>
+  </div>
+</section>
+
+
+<section id="approach">
+  <div class="container">
+    <div class="section-head">
+      <h2>My Teaching Approach</h2>
+      <p>Helping students move from memorization to real conceptual understanding.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="icon">1️⃣</div><h3>Start from the Basics</h3><p>Build strong foundations before moving to advanced chemistry concepts.</p></article>
+      <article class="card"><div class="icon">2️⃣</div><h3>Explain Simply</h3><p>Use clear explanations, examples and real-life connections.</p></article>
+      <article class="card"><div class="icon">3️⃣</div><h3>Practice & Apply</h3><p>Use questions, activities and problem solving to strengthen understanding.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>From memorizing to understanding.</h2>
+    <p>Follow Chemistry with Sana Zulfiqar for clear explanations, useful learning resources and practical chemistry teaching ideas.</p>
+    <div class="buttons" style="justify-content:center">
+      <a class="btn btn-primary" href="#contact">Connect With Me</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <p>For collaboration, teaching resources, classes or general chemistry inquiries.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item"><strong>📘 Facebook</strong><span>Chemistry with Sana Zulfiqar</span></div>
+      <div class="contact-item"><strong>✉️ Email</strong><span>Add your professional email here</span></div>
+      <div class="contact-item"><strong>🌐 Website</strong><span>Chemistry with Sana Zulfiqar</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <strong>Chemistry with Sana Zulfiqar</strong>. All rights reserved.</p>
+  <p style="margin-top:5px"><a href="#home">Home</a> · <a href="#about">About</a> · <a href="#resources">Resources</a></p>
+</footer>
+
+</body>
+</html>
